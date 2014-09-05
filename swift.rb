@@ -11,11 +11,12 @@ cheatsheet do
       notes <<-'END'
         ``` swift
         class MyClass : OptionalSuperClass, OptionalProtocol1, OptionalProtocol2 {
-          var myProperty:String
-          var myOptionalProperty:String? // More properties...
-          init() {
-            myProperty = "Foo"
-          }
+            var myProperty:String
+            var myOptionalProperty:String?
+            // More properties...
+            init() {
+                myProperty = "Foo"
+            }
         }
         ```
       END
@@ -28,13 +29,13 @@ cheatsheet do
       notes <<-'END'
         ``` swift
         func doIt() -> Int {
-          return 0
+            return 0
         }
         func doIt(a:Int) -> Int {
-        return a
+            return a
         }
         func doIt(a:Int, b:Int) -> Int {
-          return a+b
+            return a+b
         }
         ```
       END
@@ -62,8 +63,8 @@ cheatsheet do
       notes <<-'END'
         ``` swift
         enum CollisionType: Int {
-          case Player = 1
-          case Enemy = 2
+            case Player = 1
+            case Enemy = 2
         }
         var type = CollisionType.Player
         ```
@@ -79,14 +80,14 @@ cheatsheet do
         var mutableDouble:Double = 1.0
         mutableDouble = 2.0
         let constantDouble:Double = 1.0
-        // constantDouble = 2.0 // error
+        // constantDouble = 2.0 // will generate an error
 
         var mutableInferredDouble = 1.0
         var optionalDouble:Double? = nil
         optionalDouble = 1.0
 
         if let definiteDouble = optionalDouble {
-          definiteDouble
+            definiteDouble
         }
         ```
       END
@@ -100,17 +101,19 @@ cheatsheet do
         ``` swift
         var condition = true
         if condition {
+            // do something
         } else {
+            // do something else
         }
 
         var val = 5
         switch val {
         case 1:
-          "foo"
+            "foo"
         case 2:
-          "bar"
+            "bar"
         default:
-          "baz"
+            "baz"
         }
 
         // omits upper value, use ... to include
@@ -133,9 +136,9 @@ cheatsheet do
         var tipInt = tipString.toInt()
 
         extension Double {
-          init (string: String) {
-            self = Double(string.bridgeToObjectiveC().doubleValue)
-          }
+            init (string: String) {
+                self = Double(string.bridgeToObjectiveC().doubleValue)
+            }
         }
         tipString = "24.99"
         var tip = Double(string:tipString)
@@ -154,7 +157,7 @@ cheatsheet do
         var array:String[] = [person1, person2]
         array += "Waldo"
         for person in array {
-          println("person: \(person)")
+            println("person: \(person)")
         }
         var waldo = array[2]
         ```
@@ -170,7 +173,7 @@ cheatsheet do
         var dict:Dictionary<String, String> = ["Frog": "Kermit", "Pig": "Ms. Piggy", "Weirdo": "Gonzo" ]
         dict["Weirdo"] = "Felipe"
         dict["Frog"] = nil // delete frog for (type, muppet) in dict {
-          println("type: \(type), muppet: \(muppet)")
+            println("type: \(type), muppet: \(muppet)")
         }
         ```
       END
